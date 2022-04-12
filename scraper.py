@@ -9,4 +9,5 @@ page_dom = BeautifulSoup(response.text, "html.parser")
 #print(page_dom.prettify())
 
 opinions = page_dom.select("div.js_product-review")
+opinion = opinions.pop()
 print(type(opinions))
