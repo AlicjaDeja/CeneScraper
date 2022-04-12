@@ -15,3 +15,7 @@
 |Date of purchasing product|||
 |For how many users useful|||
 |For how many users useless|||
+
+## Stages of project
+
+1) Extraction of elements for a single
