@@ -1,0 +1,156 @@
+[
+    {
+        "opinion_id": "8355578",
+        "author": "Fionka",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "Książka jest super. Na początku bałam się, że będzie mi się nudzić bo znam filmowe wersje... Ale nie ma porównania jak wiele rzeczy zostało pominiętych w filmie. Warto przeczytać!",
+        "posted_on": "2018-09-18 11:01:11",
+        "bought_on": "2018-09-13 13:07:48",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [],
+        "cons": []
+    },
+    {
+        "opinion_id": "3886101",
+        "author": "Agressiva",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "Pomimo znajomości filmu książkę czyta się bardzo przyjemnie. Polecam nie tylko dzieciom :)",
+        "posted_on": "2016-08-17 11:37:16",
+        "bought_on": "2016-08-09 11:26:58",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [
+            "akcja",
+            "fabuła",
+            "jakość wydania"
+        ],
+        "cons": []
+    },
+    {
+        "opinion_id": "6496773",
+        "author": "bozena",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "ksiazka ladnie oprawiona dziewczynka ktora ja dostala na urodziny byla bardzo ucieszona,",
+        "posted_on": "2018-01-20 15:24:39",
+        "bought_on": "2018-01-08 17:21:05",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [
+            "akcja",
+            "brak",
+            "fabuła",
+            "jakość wydania"
+        ],
+        "cons": []
+    },
+    {
+        "opinion_id": "12983613",
+        "author": "a...b",
+        "rcmd": "Polecam",
+        "score": "4,5/5",
+        "content": "Książka dotarła do mnie w idealnym stanie, a pomimo pięknego wyglądu, fabuła ciągnęła się dla mnie strasznie i momentami okropnie nużyła.",
+        "posted_on": "2020-08-20 20:38:48",
+        "bought_on": "2020-07-27 13:48:50",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [
+            "jakość wydania"
+        ],
+        "cons": [
+            "fabuła"
+        ]
+    },
+    {
+        "opinion_id": "8263809",
+        "author": "Aldona",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "Kolejna zakupiona książka dla siostrzenicy,która uwielbia ostatnio Harry Pottera",
+        "posted_on": "2018-08-20 12:59:55",
+        "bought_on": "2018-08-09 18:11:13",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [
+            "akcja",
+            "brak",
+            "fabuła",
+            "jakość wydania"
+        ],
+        "cons": []
+    },
+    {
+        "opinion_id": "12239368",
+        "author": "Użytkownik Ceneo",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "To pierwszy cykl opowiadań, który wreszcie wciągnął moje dziecko. Wydanie bardzo porządne, tłumaczenie staranne.",
+        "posted_on": "2020-04-23 22:30:57",
+        "bought_on": "2020-04-20 15:36:34",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [],
+        "cons": []
+    },
+    {
+        "opinion_id": "13610587",
+        "author": "b...k",
+        "rcmd": "Polecam",
+        "score": "4/5",
+        "content": "Atrakcyjnie wyglądająca okładka, minusem jest brak chociaż kilku ilustracji, które dzieci bardzo lubią.",
+        "posted_on": "2020-12-18 19:47:46",
+        "bought_on": "2020-11-23 12:34:17",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [
+            "akcja",
+            "fabuła",
+            "jakość wydania"
+        ],
+        "cons": [
+            "brak"
+        ]
+    },
+    {
+        "opinion_id": "4631779",
+        "author": "Basia",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "Książka bardzo fajna. Gorąco polecam każdemu fanowi przygód młodego czarodzieja Harrego Pottera.",
+        "posted_on": "2017-05-04 16:48:14",
+        "bought_on": "2017-04-23 22:28:53",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [],
+        "cons": []
+    },
+    {
+        "opinion_id": "10934972",
+        "author": "Asia",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "Książka trzyma w napięciu do ostatniej chwili.!!!!!!!!Jest super!!!!Polecam!!!!!!!!!!!",
+        "posted_on": "2019-08-19 13:38:25",
+        "bought_on": "2019-07-29 10:55:22",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [],
+        "cons": []
+    },
+    {
+        "opinion_id": "10935846",
+        "author": "MAGDA",
+        "rcmd": "Polecam",
+        "score": "5/5",
+        "content": "POLECAMY\r\nWIECEJ PISZE W KSIAZCE NIZ JEST W FILMIE\r\nW FILMIE NIE MA WSZYSTKICH POSTAC",
+        "posted_on": "2019-08-19 15:59:38",
+        "bought_on": "2019-07-14 11:38:04",
+        "useful_for": "0",
+        "useless_for": "0",
+        "pros": [],
+        "cons": []
+    }
+]
