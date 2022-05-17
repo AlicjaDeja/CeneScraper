@@ -1,3 +1,4 @@
+from translate import Translator
 from bs4 import BeautifulSoup
 import requests
 import json
@@ -12,20 +13,30 @@ def get_element(parent, selector, attribute = None, return_list=False):
     except (AttributeError, TypeError):
         return None
 
+opinion_elements ={
+            "author": ["span.user-post__author-name"],
+            "rcmd": ["span.user-post__author-recomendation > em"],
+            "score": ["span.user-post__score-count"],
+            "content": ["div.user-post__text"],
+            "posted_on": ["span.user-post__published > time:nth-child(1)","datetime"],
+            "bought_on": ["span.user-post__published > time:nth-child(2)", "datetime"],
+            "useful_for": ["button.vote-yes > span"],
+            "useless_for": ["button.vote-no > span"],
+            "pros": ["div.review-feature__title--positives ~ div.review-feature__item", None, True],
+            "cons": ["div.review-feature__title--negatives ~ div.review-feature__item", None, True]
+        }
+
+to_lang = "en"
+from_lang = "pl"
+translator = Translator(to_lang=to_lang, from_lang=from_lang)
+
 product_id = input("Please enter the product id: ")
-
 url = f"https://www.ceneo.pl/{product_id}#tab=reviews"
-
-response = requests.get(url)
-
-page_dom = BeautifulSoup(response.text, "html.parser")
-
-opinions = page_dom.select("div.js_product-review")
 
 all_opinions = []
 
 while (url):
-
+    print(url)
     response = requests.get(url)
     page_dom = BeautifulSoup(response.text, "html.parser")
     opinions = page_dom.select("div.js_product-review")
@@ -33,18 +44,16 @@ while (url):
     for opinion in opinions:
 
         single_opinion = {
-            "opinion_id": opinion["data-entry-id"],
-            "author": get_element(opinion, "span.user-post__author-name"),
-            "rcmd": get_element(opinion, "span.user-post__author-recomendation > em"),
-            "score": get_element(opinion, "span.user-post__score-count"),
-            "content": get_element(opinion, "div.user-post__text"),
-            "posted_on": get_element(opinion, "span.user-post__published > time:nth-child(1)","datetime"),
-            "bought_on": get_element(opinion, "span.user-post__published > time:nth-child(2)", "datetime"),
-            "useful_for": get_element(opinion, "button.vote-yes > span"),
-            "useless_for": get_element(opinion, "button.vote-no > span"),
-            "pros": get_element(opinion, "div.review-feature__title--positives ~ div.review-feature__item", None, True),
-            "cons": get_element(opinion, "div.review-feature__title--negatives ~ div.review-feature__item", None, True)
+            key: get_element(opinion, *values)
+            for key, values in opinion_elements.items()
         }
+
+        single_opinion["opinion_id"] = opinion["data-entry-id"]
+        single_opinion["rcmd"] = True if single_opinion["rcmd"] == "Polecam" else False if single_opinion["rcmd"] == "Nie polecam" else None
+        single_opinion["score"] = float(single_opinion["score"].split("/")[0].replace(",","."))
+        single_opinion['useful_for'] = int(single_opinion["useful_for"])
+        single_opinion["useless_for"] = int(single_opinion["useless_for"])
+        single_opinion["content_en"] = translator.translate(single_opinion["content"])
         all_opinions.append(single_opinion)
 
     try:
