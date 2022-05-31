@@ -7,10 +7,10 @@ dest = "en"
 src = "pl"
 translator = Translator()
 
-def get_element(parent, selector, attribute = None, return_list=False):
+def get_element(parent, selector, attribute = None, return_list = False):
     try:
         if return_list:
-            return [item.text.strip() for item in parent.select(selector)]
+            return ", ".join([item.text.strip() for item in parent.select(selector)])
         if attribute:
             return parent.select_one(selector)[attribute]
         return opinion.select_one(selector).text.strip()
@@ -18,7 +18,11 @@ def get_element(parent, selector, attribute = None, return_list=False):
         return None
 
 def translate(text, src=src, dest=dest):
-    return translator.translate(text,src=src, dest=dest).text
+    try:
+        return translator.translate(text, src=src, dest=dest).text
+    except AttributeError:
+        print("Error")
+        return None
 
 opinion_elements ={
             "author": ["span.user-post__author-name"],
@@ -59,12 +63,12 @@ while (url):
         single_opinion["useful_for"] = int(single_opinion["useful_for"])
         single_opinion["useless_for"] = int(single_opinion["useless_for"])
         single_opinion["content_en"] = translate(single_opinion["content"])
-        single_opinion["pros_en"] = [translate(pros) for pros in single_opinion['pros']]
-        single_opinion["cons_en"] = [translate(cons) for cons in single_opinion['cons']]
+        single_opinion['pros_en'] = translate(single_opinion['pros']) if single_opinion["pros"] else ""
+        single_opinion['cons_en'] = translate(single_opinion['cons']) if single_opinion["cons"] else ""
         all_opinions.append(single_opinion)
 
     try:
-        url = "https://www.ceneo.pl"+page_dom.select_one("s.pagination__next")["href"]
+        url = "https://www.ceneo.pl"+get_element(page_dom,"a.pagination__next","href")
     except TypeError:
         url = None
 
