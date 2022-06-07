@@ -2,6 +2,7 @@ from googletrans import Translator
 from bs4 import BeautifulSoup
 import requests
 import json
+import os
 
 dest = "en"
 src = "pl"
@@ -36,8 +37,6 @@ opinion_elements ={
             "pros": ["div.review-feature__title--positives ~ div.review-feature__item", None, True],
             "cons": ["div.review-feature__title--negatives ~ div.review-feature__item", None, True]
         }
-
-
 
 product_id = input("Please enter the product id: ")
 url = f"https://www.ceneo.pl/{product_id}#tab=reviews"
